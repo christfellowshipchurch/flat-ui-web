@@ -1,4 +1,4 @@
-![alt christ-fellowship-flat-ui](./docs/static/Flat-UI-Icon.png)
+![alt christ-fellowship-flat-ui](./docs/static/Flat-UI-Logo.png)
 # @christfellowshipchurch/flat-ui-web
 
 ## About
