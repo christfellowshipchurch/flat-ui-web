@@ -1,6 +1,5 @@
-# @christfellowshipchurch/flat-ui-web
-
 ![alt christ-fellowship-flat-ui](./docs/static/Flat-UI-Icon.png)
+# @christfellowshipchurch/flat-ui-web
 
 ## About
 This React DOM package is the Flat UI kit developed by [Christ Fellowship Church](https://gochristfellowship.com). This UI Kit uses hard edges, solid colors, and no shadows to give a flat look to the overall design. Check out a directory for descriptions of each UI element and use cases for each of the elements.
