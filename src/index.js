@@ -1,13 +1,12 @@
-import * as Accordion from './Accordion'
-import * as CallsToAction from './CallsToAction'
-import * as GeneralContent from './GeneralContent'
-import * as Loaders from './Loaders'
-import * as Media from './Media'
+import * as AccordionComp from './Accordion'
+import * as CallsToActionComp from './CallsToAction'
+import * as GeneralContentComp from './GeneralContent'
+import * as LoadersComp from './Loaders'
+import * as MediaComp from './Media'
 
-export {
-    Accordion,
-    CallsToAction,
-    GeneralContent,
-    Loaders,
-    Media,
-}
+
+export const Accordion = AccordionComp
+export const CallsToAction = CallsToActionComp
+export const GeneralContent = GeneralContentComp
+export const Loaders = LoadersComp
+export const Media = MediaComp
