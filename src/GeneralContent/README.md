@@ -5,11 +5,7 @@ The component has the ability to display a piece of media with a title, content,
 
 ## Layouts
 There are five different layout configurations available: Default, Inverted, Background, Left, and Right.
-![alt christ-fellowship-flat-ui](/docs/static/GeneralContent/Default.png)
-![alt christ-fellowship-flat-ui](/docs/static/GeneralContent/Inverted.png)
-![alt christ-fellowship-flat-ui](/docs/static/GeneralContent/Background.png)
-![alt christ-fellowship-flat-ui](/docs/static/GeneralContent/Content-Left.png)
-![alt christ-fellowship-flat-ui](/docs/static/GeneralContent/Content-Right.png)
+![alt christ-fellowship-flat-ui](/docs/static/General-Content.png)
 
 ## Usage
 The component is made up of the following components: Wrapper, Title, and Body.

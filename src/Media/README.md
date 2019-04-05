@@ -1,12 +1,6 @@
 # Media
 
-![alt christ-fellowship-flat-ui](/docs/static/Media/1by1.png)
-
-![alt christ-fellowship-flat-ui](/docs/static/Media/4by3.png)
-
-![alt christ-fellowship-flat-ui](/docs/static/Media/16by9.png)
-
-![alt christ-fellowship-flat-ui](/docs/static/Media/21by9.png)
+![alt christ-fellowship-flat-ui](/docs/static/Media.png)
 
 ## About
 The media object renders either a video or an image within the boundaries of an aspect ratio. The content is centered horizontally and vertically when cropped into the ratio. The component uses the package `react-image` in order to take advantage of the loading state so that there will be a loading graphic displayed while the image is loading. Currently, there is not support for overriding the loading graphic and it uses the [StandardLoader](/docs/src/Loaders)
