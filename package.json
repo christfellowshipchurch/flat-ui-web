@@ -2,13 +2,12 @@
   "name": "@christfellowshipchurch/flat-ui-web",
   "version": "0.0.1",
   "description": "Flat UI package for Christ Fellowship web projects",
-  "main": "src/index.js",
-  "files": [
-    "src/**"
-  ],
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint ./src --ext .js"
+    "build": "rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
+    "lint": "eslint ./src --ext .js",
+    "babel-version": "babel --version"
   },
   "repository": {
     "type": "git",
@@ -18,6 +17,9 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
     "url": "https://github.com/christfellowshipchurch/flat-ui-web/issues"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5"
   },
   "peerDependencies": {
     "react": "^16.8.3",
