@@ -9,7 +9,7 @@ import {
   Container, Row, Col,
 } from 'reactstrap';
 
-import MediaItem from '../Media'
+import * as Media from '../Media'
 import CallsToAction from '../CallsToAction'
 
 const ColOrder = (size, order) => ({ size, order });
@@ -54,7 +54,6 @@ const BackgroundClasses = (layout, attr) => {
   }
 }
 
-// TODO : refactor... pls
 const GeneralContentWrapper = ({
   layout, imageUrl, imageAlt, videoUrl, ratio, children, margin, padding, actions, target
 }) => {
@@ -92,7 +91,7 @@ const GeneralContentWrapper = ({
           ShowDefaultImg(layout) || imageUrl
             ? (
               <Col className={classes.mediaCol}>
-                <MediaItem
+                <Media.Item
                   imageUrl={imageUrl || defaultProps.imageUrl}
                   imageAlt={imageAlt || defaultProps.imageAlt}
                   videoUrl={videoUrl}

@@ -1,7 +1,5 @@
-import StandardLoader from './StandardLoader'
-import GeneralContent from './GeneralContentLoading'
-import Accordion from './AccordionLoading'
+import Standard from './StandardLoader'
+import GeneralContent from './GeneralContentLoader'
+import Accordion from './AccordionLoader'
 
-export default StandardLoader
-export const GeneralContentLoader = GeneralContent
-export const AccordionLoader = Accordion
+export { Standard, GeneralContent, Accordion }
