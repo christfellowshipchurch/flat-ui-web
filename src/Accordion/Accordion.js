@@ -51,47 +51,46 @@ const Accordion = ({ expand, children }) => {
   }
 
   return (
-    <React.Fragment>
-      <Container className="accordion my-5" id={id}>
-        <Row>
-          {children.map((child, i) => {
-            const itemId = `${id}-items-${i}`;
+    <Container className="accordion my-5" id={id}>
+      <Row>
+        {children.map((child, i) => {
+          const itemId = `${id}-items-${i}`;
 
-            return (
-              <Col xs="12" md="6" key={itemId}>
-                <AccordionItem
-                  id={itemId}
-                  title={child.props.title}
-                  isOpen={expanded.includes(itemId)}
-                  onClick={toggle}
-                >
-                  {child}
-                </AccordionItem>
-              </Col>
-            );
-          })}
-        </Row>
-      </Container>
-      {/* <Container className="accordion my-3">
-        <CardColumns>
-          {items.map((item, i) => {
-            const itemId = `${id}-items-${i}`;
-
-            return (
+          return (
+            <Col xs="12" md="6" key={itemId}>
               <AccordionItem
                 id={itemId}
-                title={item.title}
+                title={child.props.title}
                 isOpen={expanded.includes(itemId)}
                 onClick={toggle}
               >
-                {htmlToReactParser.parse(item.htmlContent)}
+                {child}
               </AccordionItem>
-            );
-          })}
-        </CardColumns>
-      </Container> */}
-    </React.Fragment>
+            </Col>
+          );
+        })}
+      </Row>
+    </Container>
   );
+
+  {/* <Container className="accordion my-3">
+      <CardColumns>
+        {items.map((item, i) => {
+          const itemId = `${id}-items-${i}`;
+
+          return (
+            <AccordionItem
+              id={itemId}
+              title={item.title}
+              isOpen={expanded.includes(itemId)}
+              onClick={toggle}
+            >
+              {htmlToReactParser.parse(item.htmlContent)}
+            </AccordionItem>
+          );
+        })}
+      </CardColumns>
+    </Container> */}
 }
 
 const propTypes = {

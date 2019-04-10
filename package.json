@@ -1,15 +1,17 @@
 {
   "name": "@christfellowshipchurch/flat-ui-web",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Flat UI package for Christ Fellowship web projects",
-  "main": "src/index.js",
-  "files": [
-    "src/**"
-  ],
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint ./src --ext .js"
+    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
+    "lint": "eslint ./src --ext .js",
+    "babel-version": "babel --version"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/christfellowshipchurch/flat-ui-web.git"
@@ -18,6 +20,18 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
     "url": "https://github.com/christfellowshipchurch/flat-ui-web/issues"
+  },
+  "devDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "babel-cli": "^6.6.5",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "jest": "^24.5.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",
@@ -35,8 +49,12 @@
     "popper.js": "^1.14.7",
     "prop-types": "^15.7.2",
     "react-image": "^2.0.0",
-    "react-scripts": "2.1.5",
     "reactstrap": "^7.1.0"
+  },
+  "babel": {
+    "presets": [
+      "react"
+    ]
   },
   "jest": {
     "collectCoverage": true,
@@ -47,10 +65,7 @@
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
       "<rootDir>/src/**/?(*.)(spec|test|tests).{js,jsx,mjs}"
     ],
-    "testEnvironment": "node",
-    "reporters": [
-      "<rootDir>/../../scripts/fingers-crossed-reporter.js"
-    ]
+    "testEnvironment": "node"
   },
   "homepage": "https://github.com/christfellowshipchurch/flat-ui-web#readme",
   "publishConfig": {
