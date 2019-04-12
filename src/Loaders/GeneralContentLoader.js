@@ -17,8 +17,6 @@ const Layouts = {
 };
 
 const GeneralContentWrapper = ({ layout, className }) => {
-  console.log({ layout })
-
   const md = get(Layouts, layout, Layouts.default);
   const classes = {
     container: classNames(

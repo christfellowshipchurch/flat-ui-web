@@ -12,7 +12,9 @@ This package uses a handful of other packages and technologies
 * [Reactstrap](https://reactstrap.github.io) - a React Bootstrap library
 * [FontAwesome](https://fontawesome.com) - icon library
 
-Make sure that when you set up your project using this package, you import the main style sheet into your package. It'll be inside of `node_modules/@christfellowship/flat-ui-web/styles/styles.scss`. We are working on getting this to be modularized, so this is just a temporary solution for right now.
+Make sure that when you set up your project using this package, you import the main style sheet into your package. It'll be inside of `node_modules/@christfellowship/flat-ui-web/styles/css/styles.css`. 
+
+QUICK TIP: This stylesheet includes compiled Bootstrap, so there's no need to import Bootstrap after importing this stylesheet unless you're wanting custom Bootstrap theming. We are working on getting this to be modularized to remove the global stylesheet dependency, so this is just a temporary solution for right now. Version 1 will be released with a fully modularized styling system.
 
 
 ## Testing

@@ -13,7 +13,7 @@ const AccordionItem = ({ id, title, isOpen, onClick, children }) => {
   const [status, setStatus] = useState('Closed')
 
   return (
-    <Card className="accordion-item shadow-sm" data-status={status} id={id}>
+    <Card className="accordion-item" data-status={status} id={id}>
       <CardHeader className="p-0">
         <Button
           className="accordion-action p-0 w-100 text-left"
@@ -54,7 +54,11 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
   onClick: PropTypes.func,
-  children: PropTypes.arrayOf(PropTypes.element)
+  children: PropTypes.oneOfType(
+    PropTypes.element,
+    PropTypes.array,
+    PropTypes.object
+  )
 };
 const defaultProps = {
   isOpen: false,

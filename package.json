@@ -1,14 +1,14 @@
 {
   "name": "@christfellowshipchurch/flat-ui-web",
-  "version": "0.0.7",
+  "version": "0.0.17",
   "description": "Flat UI package for Christ Fellowship web projects",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
+    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib --copy-files && yarn build-css",
     "lint": "eslint ./src --ext .js",
     "babel-version": "babel --version",
-    "fix-react": "yarn link react"
+    "build-css": "node-sass --include-path scss ./src/styles/styles.scss ./lib/css/styles.css"
   },
   "files": [
     "lib"

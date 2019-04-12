@@ -10,7 +10,7 @@ import {
 } from 'reactstrap';
 import AccordionItem from './AccordionItem';
 
-import '../styles/Accordion.scss'
+import '../styles/components/Accordion.scss'
 
 const ACCORDION_TYPES = {
   Single: 'single',

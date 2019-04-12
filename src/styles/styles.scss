@@ -7,7 +7,7 @@
 @import './colors.scss';
 @import './variables.scss';
 @import './functions.scss';
-@import "../../node_modules/bootstrap/scss/_functions.scss";
+@import './bootstrap_theme.scss';
 
 /* Aspect Ratio Based Sizes */
 @function get-vw($x, $y) {
