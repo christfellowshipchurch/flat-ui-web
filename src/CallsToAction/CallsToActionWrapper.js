@@ -11,7 +11,7 @@ const CallsToActionWrapper = ({
   return (
     <Row className={className}>
       {actions.map((n, i) =>
-        <Col xs='12' md='6' className='my-1'>
+        <Col xs='12' md='6' className='my-1' key={i}>
           <a href={n.action} target={target} className="w-100">
             <Button
               color="primary"

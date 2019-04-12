@@ -1,0 +1,16 @@
+/**
+* Override Bootstrap Variables before imporing
+* For a list of available override, see the _variables.scss in the Boostrap directory
+*/
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.card {
+    border: none;
+}
+
+.card-columns {
+    @include media-breakpoint-up(md) {
+        column-count: 2;
+    }
+}

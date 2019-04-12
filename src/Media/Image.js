@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Img from 'react-image';
-import StandardLoader from '../Loaders';
+import * as Loaders from '../Loaders';
 
 const GeneralContentMediaImage = ({ className, source, alt }) => (
   <Img
     src={source}
     alt={alt}
     className={className}
-    loader={<StandardLoader />}
+    loader={<Loaders.Standard />}
   />
 );
 

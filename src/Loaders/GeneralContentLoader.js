@@ -7,6 +7,8 @@ import {
   Container, Row, Col,
 } from 'reactstrap'
 
+import '../styles/components/Loaders.scss'
+
 const ColOrder = (size, order, justify) => ({ size, order, justify });
 const Layouts = {
   default: ColOrder(12, 'last', 'center'),
@@ -15,8 +17,6 @@ const Layouts = {
 };
 
 const GeneralContentWrapper = ({ layout, className }) => {
-  console.log({ layout })
-
   const md = get(Layouts, layout, Layouts.default);
   const classes = {
     container: classNames(

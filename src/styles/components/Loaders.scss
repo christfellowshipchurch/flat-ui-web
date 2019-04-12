@@ -1,0 +1,87 @@
+@import '../colors.scss';
+
+/**
+* Standard Loader
+*/
+.lds-dual-ring {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+
+    &:after {
+        content: " ";
+        display: block;
+        width: 46px;
+        height: 46px;
+        margin: 1px;
+        border-radius: 50%;
+        border: 5px solid $primary;
+        border-color: $primary transparent $primary transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+    }
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Placeholder */
+.ph-g {
+	color: $gray-300;
+	background: linear-gradient(90deg, $gray-400, $gray-100);
+	background-size: 300% 300%;
+	-webkit-animation: Gradient 3s ease infinite;
+	-moz-animation: Gradient 3s ease infinite;
+    animation: Gradient 3s ease infinite;
+    
+    &.ph-title {
+        height: 20px;
+    }
+    &.ph-content {
+        height: 10px;
+    }
+    &.ph-accordion {
+        height: 50px;
+    }
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	75% {
+		background-position: 100% 50%
+    }
+    100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	75% {
+		background-position: 100% 50%
+    }
+    100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	75% {
+		background-position: 100% 50%
+    }
+    100% {
+		background-position: 0% 50%
+	}
+}
