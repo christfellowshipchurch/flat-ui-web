@@ -7,6 +7,8 @@ import {
   Container, Row, Col,
 } from 'reactstrap'
 
+import '../styles/components/Loaders.scss'
+
 const ColOrder = (size, order, justify) => ({ size, order, justify });
 const Layouts = {
   default: ColOrder(12, 'last', 'center'),

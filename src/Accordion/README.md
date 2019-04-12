@@ -19,7 +19,7 @@ The Accordion is broken into 2 componets: `Accordion` (the parent container that
 
 The Accordion will automatically wrap each child passed in the `AccordionItem` as it renders, so all you need to do is drop in the Html you want to be rendered in each item. Just add the `title` attribute to each container.
 ```jsx
-<Accordion>
+<Accordion.Wrapper>
     <div title="Item 1">
         <h2>This is one item that I want displayed</h2>
     </div>
@@ -27,7 +27,7 @@ The Accordion will automatically wrap each child passed in the `AccordionItem` a
     <h2 title="Item 2">Since the Accordion parses each child, there is no need to adhere to a specific structure for the children</h2>
 
     <ReactComponent title="Item 3">You can even pass in a React Component</ReactComponent>
-</Accordion>
+</Accordion.Wrapper>
 ```
 
 

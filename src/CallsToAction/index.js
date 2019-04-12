@@ -1,3 +1,3 @@
 import Wrapper from './CallsToActionWrapper'
 
-export default Wrapper
+export { Wrapper }

@@ -4,6 +4,8 @@ import {
   Container, Row, Col,
 } from 'reactstrap';
 
+import '../styles/components/Loaders.scss'
+
 const Accordion = () => {
   return (
     <Container className="my-5">

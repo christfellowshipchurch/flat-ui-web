@@ -9,8 +9,10 @@ import {
   Container, Row, Col,
 } from 'reactstrap';
 
+import '../styles/components/GeneralContent.scss'
+
 import * as Media from '../Media'
-import CallsToAction from '../CallsToAction'
+import { Wrapper as CallsToAction } from '../CallsToAction'
 
 const ColOrder = (size, order) => ({ size, order });
 const Layouts = {

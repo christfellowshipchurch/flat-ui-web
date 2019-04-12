@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
+import '../styles/components/Loaders.scss'
 
-const StandardLoader = () => <div className="lds-dual-ring" />;
+const StandardLoader = () => <div className="lds-dual-ring" />
 
-const propTypes = {};
-const defaultProps = {};
+const propTypes = {}
+const defaultProps = {}
 
-StandardLoader.propTypes = propTypes;
-StandardLoader.defaultProps = defaultProps;
+StandardLoader.propTypes = propTypes
+StandardLoader.defaultProps = defaultProps
 
-export default StandardLoader;
+export default StandardLoader

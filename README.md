@@ -12,6 +12,8 @@ This package uses a handful of other packages and technologies
 * [Reactstrap](https://reactstrap.github.io) - a React Bootstrap library
 * [FontAwesome](https://fontawesome.com) - icon library
 
+Make sure that when you set up your project using this package, you import the main style sheet into your package. It'll be inside of `node_modules/@christfellowship/flat-ui-web/styles/styles.scss`. We are working on getting this to be modularized, so this is just a temporary solution for right now.
+
 
 ## Testing
 Flat UI Web using jest snapshots for testing.

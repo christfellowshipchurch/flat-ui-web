@@ -22,7 +22,7 @@ const actions = [
     }
 ]
 
-<CallsToAction action={actions} target="blank" />
+<CallsToAction.Wrapper action={actions} target="blank" />
 ```
 
 

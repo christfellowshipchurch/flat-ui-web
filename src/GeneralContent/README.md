@@ -14,27 +14,27 @@ The component is made up of the following components: Wrapper, Title, and Body.
 * **GeneralContentBody:** optional styled body wrapper for the piece of content that accepts html and React Component(s)
 
 ```jsx
-<GeneralContent
+<GeneralContent.Wrapper
     layout="default"
     imageUrl="htts://img.url"
     imageAlt="Alt text for my image"
     videoUrl="https://vid.url"
     ratio="1by1"
 >
-    <GeneralContentTitle>
+    <GeneralContent.Title>
         This is the title on my content
-    </GeneralContentTitle>
+    </GeneralContent.Title>
 
-    <GeneralContentBody>
+    <GeneralContent.Body>
         <h4>Here I can pass in any html that I want</h4>
 
         I can also just pass in plain text
 
         <ReactComponent>This is my super cool React Component that I'm passing in too!</ReactComponent>
-    </GeneralContentBody>
+    </GeneralConten.tBody>
 
     <i>*I can also just pass in extra Html to the main component</i>
-</GeneralContent>
+</GeneralContent.Wrapper>
 ```
 
 
