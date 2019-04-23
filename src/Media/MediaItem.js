@@ -5,30 +5,29 @@ import classNames from 'classnames';
 import Image from './Image';
 import Video from './Video';
 
-// TODO : Add frost as a prop that gets passed in with the frost type [light, dark] being the value
-const GeneralContentMediaItem = ({
-  ratio, imageUrl, imageAlt, videoUrl, className, loading
+import {
+  mediaContainer1by1, mediaContainer4by3, mediaContainer16by9, mediaContainer21by9
+} from '../styles/styles.module.scss'
+
+const MediaItem = ({
+  ratio, imageUrl, imageAlt, videoUrl, className
 }) => {
-  const ratioClass = `embed-responsive-${ratio}`;
-  const containerClasses = classNames(
-    'general-content-media',
-    'embed-responsive',
-    ratioClass,
-    className
-  );
-  const mediaObjClass = classNames(
-    'embed-responsive-item',
-  );
+  const ratioClasses = {
+    '1by1': mediaContainer1by1,
+    '4by3': mediaContainer4by3,
+    '16by9': mediaContainer16by9,
+    '21by9': mediaContainer21by9,
+  }
 
   const img = imageUrl
-    ? <Image source={imageUrl} alt={imageAlt} className={mediaObjClass} />
+    ? <Image source={imageUrl} alt={imageAlt} />
     : null
   const video = videoUrl
-    ? <Video source={videoUrl} className={mediaObjClass} />
+    ? <Video source={videoUrl} />
     : null
   return (
-    <div className={containerClasses}>
-      {loading ? <div class="loading-img"></div> : <React.Fragment>{img}{video}</React.Fragment>}
+    <div className={classNames(ratioClasses[ratio], className)}>
+      {img}{video}
     </div>
   );
 };
@@ -47,10 +46,9 @@ const propTypes = {
   imageAlt: PropTypes.string,
   videoUrl: PropTypes.string,
   className: PropTypes.string,
-  loading: PropTypes.bool.isRequired,
 }
 
-GeneralContentMediaItem.defaultProps = defaultProps;
-GeneralContentMediaItem.propTypes = propTypes;
+MediaItem.defaultProps = defaultProps;
+MediaItem.propTypes = propTypes;
 
-export default GeneralContentMediaItem;
+export default MediaItem;

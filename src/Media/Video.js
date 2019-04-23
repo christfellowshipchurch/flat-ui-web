@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GeneralContentMediaVideo = ({ source }) => (
-  <video playsInline autoPlay loop muted className="embed-responsive-item">
+import { mediaItem } from '../styles/styles.module.scss'
+
+const MediaVideo = ({ source }) => (
+  <video playsInline autoPlay loop muted className={mediaItem}>
     <source type="video/mp4" src={source} />
   </video>
 );
@@ -12,7 +14,7 @@ const propTypes = {
   source: PropTypes.string.isRequired,
 }
 
-GeneralContentMediaVideo.defaultProps = defaultProps;
-GeneralContentMediaVideo.propTypes = propTypes;
+MediaVideo.defaultProps = defaultProps;
+MediaVideo.propTypes = propTypes;
 
-export default GeneralContentMediaVideo;
+export default MediaVideo;
