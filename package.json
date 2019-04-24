@@ -1,14 +1,15 @@
 {
   "name": "@christfellowshipchurch/flat-ui-web",
-  "version": "0.0.19",
+  "version": "0.0.21",
   "description": "Flat UI package for Christ Fellowship web projects",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest",
-    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib --copy-files && yarn build-css",
+    "test": "yarn build-css && jest",
+    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib && yarn minify-css",
     "lint": "eslint ./src --ext .js",
     "babel-version": "babel --version",
-    "build-css": "node-sass --include-path scss ./src/styles/styles.scss ./lib/css/styles.css"
+    "build-css": "node-sass --include-path scss ./src/scss/styles.module.scss ./src/css/styles.module.css",
+    "minify-css": "node-sass --include-path scss ./src/scss/styles.module.scss ./lib/css/styles.module.css --output-style compressed"
   },
   "files": [
     "lib"
@@ -23,22 +24,27 @@
     "url": "https://github.com/christfellowshipchurch/flat-ui-web/issues"
   },
   "devDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "babel-cli": "^6.6.5",
-    "babel-preset-react": "^6.24.1",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "jest": "^24.5.0"
+    "jest": "^24.7.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^3.0.0",
+    "react-test-renderer": "^16.8.6",
+    "sass-loader": "^7.1.0"
   },
   "peerDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "dependencies": {
+    "@babel/cli": "^7.4.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
@@ -52,21 +58,19 @@
     "react-image": "^2.0.0",
     "reactstrap": "^7.1.0"
   },
-  "babel": {
-    "presets": [
-      "react"
-    ]
-  },
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "babel-jest"
+    },
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
       "<rootDir>/src/**/?(*.)(spec|test|tests).{js,jsx,mjs}"
     ],
-    "testEnvironment": "node"
+    "testEnvironment": "jsdom"
   },
   "homepage": "https://github.com/christfellowshipchurch/flat-ui-web#readme",
   "publishConfig": {
