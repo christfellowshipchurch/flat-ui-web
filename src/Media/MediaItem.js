@@ -7,7 +7,7 @@ import Video from './Video';
 
 import {
   mediaContainer1by1, mediaContainer4by3, mediaContainer16by9, mediaContainer21by9
-} from '../styles/styles.module.scss'
+} from '../css/styles.module.css'
 
 const MediaItem = ({
   ratio, imageUrl, imageAlt, videoUrl, className
@@ -19,31 +19,26 @@ const MediaItem = ({
     '21by9': mediaContainer21by9,
   }
 
-  const img = imageUrl
-    ? <Image source={imageUrl} alt={imageAlt} />
-    : null
-  const video = videoUrl
-    ? <Video source={videoUrl} />
-    : null
   return (
     <div className={classNames(ratioClasses[ratio], className)}>
-      {img}{video}
+      <Image source={imageUrl} alt={imageAlt} />
+      {videoUrl
+        ? <Video source={videoUrl} />
+        : null}
     </div>
   );
 };
 
 const defaultProps = {
   ratio: '1by1',
-  imageUrl: 'https://via.placeholder.com/1024',
-  imageAlt: 'Christ Fellowship Church',
   videoUrl: null,
   className: ''
 }
 
 const propTypes = {
   ratio: PropTypes.string,
-  imageUrl: PropTypes.string,
-  imageAlt: PropTypes.string,
+  imageUrl: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired,
   videoUrl: PropTypes.string,
   className: PropTypes.string,
 }

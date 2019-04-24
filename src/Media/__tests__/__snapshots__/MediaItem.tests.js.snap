@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MediaItem renders a video with a background image 1`] = `
+<div
+  className=""
+>
+  <div />
+  <video
+    autoPlay={true}
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://video.url.com"
+      type="video/mp4"
+    />
+  </video>
+</div>
+`;
+
+exports[`MediaItem renders an image with no video 1`] = `
+<div
+  className=""
+>
+  <div />
+</div>
+`;
