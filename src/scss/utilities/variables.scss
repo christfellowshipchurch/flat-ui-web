@@ -1,0 +1,23 @@
+/*  Bootstrap Overrides */
+$border-radius: 0;
+
+/**
+* Colors
+*/
+$cyan: #00aeef;
+$loader-gradient-end: #f8f9fa;
+$loader-gradient-start: #ced4da;
+
+/**
+* Aspect Ratios
+*/
+$media-aspect-ratios: () !default;
+$media-aspect-ratios: join(
+  (
+    (21 9),
+    (16 9),
+    (4 3),
+    (1 1),
+  ),
+  $media-aspect-ratios
+);
