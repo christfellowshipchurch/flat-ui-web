@@ -1,80 +1,29 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { get } from 'lodash'
-import classNames from 'classnames'
 
 import {
-  Container, Row, Col,
-} from 'reactstrap'
+  contentLoaderContainer, contentLoaderImg, contentLoaderTitle, contentLoaderLine,
+} from '../css/styles.module.css'
 
-import '../styles/components/Loaders.scss'
+const ContentLoader = () => (
+  <div class={contentLoaderContainer}>
 
-const ColOrder = (size, order, justify) => ({ size, order, justify });
-const Layouts = {
-  default: ColOrder(12, 'last', 'center'),
-  left: ColOrder(6, 'first', 'end'),
-  right: ColOrder(6, 'last', 'start'),
-};
+    <div class={contentLoaderImg}></div>
 
-const GeneralContentWrapper = ({ layout, className }) => {
-  const md = get(Layouts, layout, Layouts.default);
-  const classes = {
-    container: classNames(
-      className,
-      'mb-5'
-    ),
-    row: classNames(
-      'my-3',
-      'justify-content-center',
-      `justify-content-md-${md.justify}`
-    ),
-    col: classNames(
-      'ph-g',
-    )
-  }
+    <div class={contentLoaderTitle}></div>
 
-  const title = `${classes.col} ph-title`;
-  const content = `${classes.col} ph-content`;
+    <div class={contentLoaderLine}></div>
+    <div class={contentLoaderLine}></div>
+    <div class={contentLoaderLine}></div>
+    <div class={contentLoaderLine}></div>
+    <div class={contentLoaderLine}></div>
+  </div>
+)
 
-  return (
-    <Container className={classes.container}>
-      <Row className="align-items-center">
-        <Col>
-          <div className='embed-responsive embed-responsive-16by9 ph-g'>
-          </div>
-        </Col>
-        <Col xs="12" md={md}>
-          <Row className={classes.row}>
-            <Col xs="4" className={title}>
-            </Col>
-          </Row>
-          {[1, 2, 3, 4].map((n) => (
-            <Row className={classes.row} key={n}>
-              <Col xs="8" className={content}>
-              </Col>
-            </Row>
-          ))}
-          <Row className={classes.row}>
-            <Col xs="6" className={content}>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
+const defaultProps = {}
 
-const defaultProps = {
-  layout: 'default',
-  className: ''
-};
+const propTypes = {}
 
-const propTypes = {
-  layout: PropTypes.string,
-  className: PropTypes.string
-};
+ContentLoader.defaultProps = defaultProps
+ContentLoader.propTypes = propTypes
 
-GeneralContentWrapper.defaultProps = defaultProps;
-GeneralContentWrapper.propTypes = propTypes;
-
-export default GeneralContentWrapper;
+export default ContentLoader;

@@ -1,12 +1,14 @@
 import React from 'react'
-import '../styles/components/Loaders.scss'
+import {
+    ringLoader
+} from '../css/style.module.css'
 
-const StandardLoader = () => <div className="lds-dual-ring" />
+const RingLoader = () => <div className={ringLoader} />
 
 const propTypes = {}
 const defaultProps = {}
 
-StandardLoader.propTypes = propTypes
-StandardLoader.defaultProps = defaultProps
+RingLoader.propTypes = propTypes
+RingLoader.defaultProps = defaultProps
 
-export default StandardLoader
+export default RingLoader
