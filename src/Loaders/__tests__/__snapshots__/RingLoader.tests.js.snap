@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RingLoader renders the placeholder component 1`] = `<div />`;

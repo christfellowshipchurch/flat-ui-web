@@ -1,10 +1,10 @@
 import React from 'react'
-import AccordionLoader from '../AccordionLoader'
+import ContentLoader from '../GeneralContentLoader'
 import renderer from 'react-test-renderer'
 
-describe('AccordionLoader', () => {
+describe('ContentLoader', () => {
     it('renders the placeholder component', () => {
-        const tree = renderer.create(<AccordionLoader />)
+        const tree = renderer.create(<ContentLoader />)
 
         expect(tree).toMatchSnapshot()
     })

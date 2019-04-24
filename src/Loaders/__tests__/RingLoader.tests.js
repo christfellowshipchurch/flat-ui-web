@@ -1,10 +1,10 @@
 import React from 'react'
-import AccordionLoader from '../AccordionLoader'
+import RingLoader from '../StandardLoader'
 import renderer from 'react-test-renderer'
 
-describe('AccordionLoader', () => {
+describe('RingLoader', () => {
     it('renders the placeholder component', () => {
-        const tree = renderer.create(<AccordionLoader />)
+        const tree = renderer.create(<RingLoader />)
 
         expect(tree).toMatchSnapshot()
     })
