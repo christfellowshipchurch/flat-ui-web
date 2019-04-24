@@ -8,7 +8,7 @@ const AccordionLoader = () => (
   <div className={accordionLoaderContainer}>
     {[1, 2, 3, 4, 5, 6].map((n) => (
       <div className={accordionLoaderColumn} key={n}>
-        <div class={accordionLoaderItem}></div>
+        <div className={accordionLoaderItem}></div>
       </div>
     ))}
   </div>

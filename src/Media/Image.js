@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import Img from 'react-image';
 import * as Loaders from '../Loaders';
 
-import { mediaItem } from '../styles/styles.module.scss'
+import { mediaItem } from '../css/styles.module.css'
 
 const MediaImage = ({ className, source, alt }) => (
   <Img

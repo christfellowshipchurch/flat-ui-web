@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     ringLoader
-} from '../css/style.module.css'
+} from '../css/styles.module.css'
 
 const RingLoader = () => <div className={ringLoader} />
 

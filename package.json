@@ -1,11 +1,11 @@
 {
   "name": "@christfellowshipchurch/flat-ui-web",
-  "version": "0.0.21",
+  "version": "0.0.25",
   "description": "Flat UI package for Christ Fellowship web projects",
   "main": "lib/index.js",
   "scripts": {
     "test": "yarn build-css && jest",
-    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib && yarn minify-css",
+    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib --copy-files && yarn minify-css",
     "lint": "eslint ./src --ext .js",
     "babel-version": "babel --version",
     "build-css": "node-sass --include-path scss ./src/scss/styles.module.scss ./src/css/styles.module.css",

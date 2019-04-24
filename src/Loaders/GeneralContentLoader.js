@@ -5,17 +5,17 @@ import {
 } from '../css/styles.module.css'
 
 const ContentLoader = () => (
-  <div class={contentLoaderContainer}>
+  <div className={contentLoaderContainer}>
 
-    <div class={contentLoaderImg}></div>
+    <div className={contentLoaderImg}></div>
 
-    <div class={contentLoaderTitle}></div>
+    <div className={contentLoaderTitle}></div>
 
-    <div class={contentLoaderLine}></div>
-    <div class={contentLoaderLine}></div>
-    <div class={contentLoaderLine}></div>
-    <div class={contentLoaderLine}></div>
-    <div class={contentLoaderLine}></div>
+    <div className={contentLoaderLine}></div>
+    <div className={contentLoaderLine}></div>
+    <div className={contentLoaderLine}></div>
+    <div className={contentLoaderLine}></div>
+    <div className={contentLoaderLine}></div>
   </div>
 )
 

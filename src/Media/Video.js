@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { mediaItem } from '../styles/styles.module.scss'
+import { mediaItem } from '../css/styles.module.css'
 
 const MediaVideo = ({ source }) => (
   <video playsInline autoPlay loop muted className={mediaItem}>
