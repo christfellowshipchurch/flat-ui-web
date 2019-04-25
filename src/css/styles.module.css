@@ -2,12 +2,27 @@
 * Modularized styling for the package
 */
 /*  Bootstrap Overrides */
-/**
-* Colors
-*/
-/**
-* Aspect Ratios
-*/
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem; }
+
+.flexCenter {
+  justify-content: center;
+  text-align: center; }
+
+.flexMiddle {
+  align-items: center; }
+
+.contentContainer {
+  composes: row;
+  composes: flexCenter;
+  composes: flexMiddle; }
+
 /**
 * Styles for the Media Item
 */
@@ -160,3 +175,80 @@
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+.contentPadding {
+  padding: 1.5rem !important; }
+  @media screen and (min-width: 768px) {
+    .contentPadding {
+      padding: 2rem !important; } }
+
+.contentMedia {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+  order: 0; }
+
+.contentRight {
+  composes: contentPadding;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  flex-basis: 100%;
+  max-width: 100%;
+  order: 1;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .contentRight {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      flex-basis: 50%;
+      max-width: 50%;
+      text-align: left; } }
+
+.contentLeft {
+  composes: contentPadding;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  flex-basis: 100%;
+  max-width: 100%;
+  order: 1;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .contentLeft {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      flex-basis: 50%;
+      max-width: 50%;
+      order: -1;
+      text-align: left; } }
+
+.contentTop {
+  composes: contentPadding;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  flex-basis: 100%;
+  max-width: 100%;
+  order: -1; }
+
+.contentBottom {
+  composes: contentPadding;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  flex-basis: 100%;
+  max-width: 100%;
+  order: 1; }
