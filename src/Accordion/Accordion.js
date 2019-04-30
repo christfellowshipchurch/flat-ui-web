@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames'
 import {
   includes, uniqueId
 } from 'lodash';
 
-import {
-  Container, Row, Col,
-  CardColumns,
-} from 'reactstrap';
 import AccordionItem from './AccordionItem';
 
-import '../styles/components/Accordion.scss'
+import {
+  accordionContainer
+} from '../css/styles.module.css'
 
 const ACCORDION_TYPES = {
   Single: 'single',
@@ -19,32 +18,32 @@ const ACCORDION_TYPES = {
   Persistent: 'persistent',
 };
 
-const Accordion = ({ expand, children }) => {
+const Accordion = ({ type, children }) => {
   const [id] = useState(uniqueId("accordion-"));
-  const [expanded, setExpanded] = useState(['0']);
+  const [sections, setSections] = useState(['0'])
 
   const toggle = (id) => {
-    switch (expand) {
+    switch (type) {
       case ACCORDION_TYPES.SinglePersistent:
-        setExpanded([id]);
+        setSections([id]);
         break
       case ACCORDION_TYPES.Multiple:
-        setExpanded(
-          includes(expanded, id)
-            ? expanded.filter(value => value !== id)
-            : [...expanded, id]
+        setSections(
+          includes(sections, id)
+            ? sections.filter(value => value !== id)
+            : [...sections, id]
         )
         break
       case ACCORDION_TYPES.Persistent:
-        setExpanded(
-          includes(expanded, id)
-            ? expanded
-            : [...expanded, id]
+        setSections(
+          includes(sections, id)
+            ? sections
+            : [...sections, id]
         )
         break
       default:
-        setExpanded(
-          includes(expanded, id)
+        setSections(
+          includes(sections, id)
             ? []
             : [id]
         )
@@ -53,54 +52,32 @@ const Accordion = ({ expand, children }) => {
   }
 
   return (
-    <Container className="accordion my-5" id={id}>
-      <Row>
-        {children.map((child, i) => {
-          const itemId = `${id}-items-${i}`;
+    <div className={accordionContainer}>
+      {children.map((child, i) => {
+        const itemId = `${id}-items-${i}`;
 
-          return (
-            <Col xs="12" md="6" key={itemId}>
-              <AccordionItem
-                id={itemId}
-                title={child.props.title}
-                isOpen={expanded.includes(itemId)}
-                onClick={toggle}
-              >
-                {child}
-              </AccordionItem>
-            </Col>
-          );
-        })}
-      </Row>
-    </Container>
-  );
-
-  {/* <Container className="accordion my-3">
-      <CardColumns>
-        {items.map((item, i) => {
-          const itemId = `${id}-items-${i}`;
-
-          return (
-            <AccordionItem
-              id={itemId}
-              title={item.title}
-              isOpen={expanded.includes(itemId)}
-              onClick={toggle}
-            >
-              {htmlToReactParser.parse(item.htmlContent)}
-            </AccordionItem>
-          );
-        })}
-      </CardColumns>
-    </Container> */}
+        return (
+          <AccordionItem
+            id={itemId}
+            title={child.props.title}
+            isOpen={sections.includes(itemId)}
+            onClick={toggle}
+            key={i}
+          >
+            {child}
+          </AccordionItem>
+        );
+      })}
+    </div>
+  )
 }
 
 const propTypes = {
-  expand: PropTypes.string,
+  type: PropTypes.string,
   children: PropTypes.arrayOf(PropTypes.element).isRequired
 };
 const defaultProps = {
-  expand: 'single',
+  type: 'single',
 };
 
 
