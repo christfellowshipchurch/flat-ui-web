@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames'
 import {
-  includes, uniqueId
+  includes
 } from 'lodash';
 
 import AccordionItem from './AccordionItem';
@@ -19,8 +18,7 @@ const ACCORDION_TYPES = {
 };
 
 const Accordion = ({ type, children }) => {
-  const [id] = useState(uniqueId("accordion-"));
-  const [sections, setSections] = useState(['0'])
+  const [sections, setSections] = useState([])
 
   const toggle = (id) => {
     switch (type) {
@@ -54,7 +52,7 @@ const Accordion = ({ type, children }) => {
   return (
     <div className={accordionContainer}>
       {children.map((child, i) => {
-        const itemId = `${id}-items-${i}`;
+        let itemId = `section-${i}`
 
         return (
           <AccordionItem
