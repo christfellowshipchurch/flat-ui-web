@@ -1,6 +1,6 @@
 {
   "name": "@christfellowshipchurch/flat-ui-web",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "Flat UI package for Christ Fellowship web projects",
   "main": "lib/index.js",
   "scripts": {
