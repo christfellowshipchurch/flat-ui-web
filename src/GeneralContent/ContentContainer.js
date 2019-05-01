@@ -20,9 +20,13 @@ const ContentContainer = ({
 
   return (
     <div className={classNames(contentContainer, className)}>
-      <div className={contentMedia}>
-        <Media.Item ratio={ratio} imageUrl={imageUrl} imageAlt={imageAlt} videoUrl={videoUrl} />
-      </div>
+      {imageUrl || videoUrl
+        ? (
+          <div className={contentMedia}>
+            <Media.Item ratio={ratio} imageUrl={imageUrl} imageAlt={imageAlt} videoUrl={videoUrl} />
+          </div>
+        )
+        : null}
       <div className={layouts[layout]}>
         {children}
       </div>
@@ -32,8 +36,8 @@ const ContentContainer = ({
 
 const defaultProps = {
   layout: 'default',
-  imageUrl: '',
-  imageAlt: '',
+  imageUrl: null,
+  imageAlt: null,
   videoUrl: null,
   ratio: '16by9',
   className: ''
