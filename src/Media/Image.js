@@ -24,8 +24,8 @@ const defaultProps = {
 
 const propTypes = {
   className: PropTypes.string,
-  source: PropTypes.string,
-  alt: PropTypes.string,
+  source: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 MediaImage.propTypes = propTypes;
