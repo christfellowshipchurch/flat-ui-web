@@ -3,7 +3,7 @@ import { Parser } from 'html-to-react';
 
 const htmlToReactParser = new Parser();
 
-const GeneralContentBody = ({ children }) =>
+const ContentBody = ({ children }) =>
   <div className="my-3">
     {htmlToReactParser.parse(children)}
   </div>
@@ -11,7 +11,7 @@ const GeneralContentBody = ({ children }) =>
 const defaultProps = {};
 const propTypes = {};
 
-GeneralContentBody.defaultProps = defaultProps;
-GeneralContentBody.propTypes = propTypes;
+ContentBody.defaultProps = defaultProps;
+ContentBody.propTypes = propTypes;
 
-export default GeneralContentBody;
+export default ContentBody;

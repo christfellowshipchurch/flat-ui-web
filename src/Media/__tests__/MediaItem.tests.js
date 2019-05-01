@@ -18,4 +18,14 @@ describe('MediaItem', () => {
 
         expect(tree).toMatchSnapshot()
     })
+
+    it('renders content overtop of an image', () => {
+        const tree = renderer.create(
+            <MediaItem imageUrl="https://img.url.com" imageAlt="Image Alt">
+                <h1>This is content overtop of an image</h1>
+            </MediaItem>
+        )
+
+        expect(tree).toMatchSnapshot()
+    })
 })
