@@ -56,10 +56,15 @@
     }
 }
 
+.ringContainer {
+    height: 100%;
+    composes: contentContainer;
+  }
+  
 .ringLoader {
     display: inline-block;
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
 
     &:after {
         content: " ";

@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-    ringLoader
+    ringContainer, ringLoader
 } from '../css/styles.module.css'
 
-const RingLoader = () => <div className={ringLoader} />
+const RingLoader = () => <div className={ringContainer}><div className={ringLoader}></div></div>
 
 const propTypes = {}
 const defaultProps = {}
