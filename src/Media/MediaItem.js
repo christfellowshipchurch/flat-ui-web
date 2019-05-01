@@ -6,11 +6,12 @@ import Image from './Image';
 import Video from './Video';
 
 import {
-  mediaContainer1by1, mediaContainer4by3, mediaContainer16by9, mediaContainer21by9
+  mediaContainer1by1, mediaContainer4by3, mediaContainer16by9, mediaContainer21by9,
+  mediaContentContainer
 } from '../css/styles.module.css'
 
 const MediaItem = ({
-  ratio, imageUrl, imageAlt, videoUrl, className
+  ratio, imageUrl, imageAlt, videoUrl, className, children
 }) => {
   const ratioClasses = {
     '1by1': mediaContainer1by1,
@@ -25,6 +26,9 @@ const MediaItem = ({
       {videoUrl
         ? <Video source={videoUrl} />
         : null}
+      <div className={mediaContentContainer}>
+        {children}
+      </div>
     </div>
   );
 };
