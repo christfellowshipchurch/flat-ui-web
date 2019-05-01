@@ -12,14 +12,12 @@ const MediaImage = ({ className, source, alt }) => (
     src={source}
     alt={alt}
     className={classNames(mediaItem, className)}
-    loader={<Loaders.Standard />}
+    loader={<Loaders.Ring />}
   />
 );
 
 const defaultProps = {
-  className: '',
-  source: 'https://via.placeholder.com/1024',
-  alt: 'Christ Fellowship Church',
+  className: ''
 };
 
 const propTypes = {

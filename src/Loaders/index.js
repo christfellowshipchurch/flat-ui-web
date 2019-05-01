@@ -1,5 +1,5 @@
-import Standard from './StandardLoader'
-import GeneralContent from './GeneralContentLoader'
+import Ring from './RingLoader'
+import Content from './ContentLoader'
 import Accordion from './AccordionLoader'
 
-export { Standard, GeneralContent, Accordion }
+export { Ring, Content, Accordion }

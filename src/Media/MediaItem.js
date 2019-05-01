@@ -26,9 +26,10 @@ const MediaItem = ({
       {videoUrl
         ? <Video source={videoUrl} />
         : null}
-      <div className={mediaContentContainer}>
-        {children}
-      </div>
+
+      {children
+        ? <div className={mediaContentContainer}>{children}</div>
+        : null}
     </div>
   );
 };

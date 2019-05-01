@@ -8,7 +8,9 @@ exports[`ContentContainer renders an image and content in default layout 1`] = `
     <div
       className=""
     >
-      <div />
+      <div>
+        <div />
+      </div>
     </div>
   </div>
   <div>

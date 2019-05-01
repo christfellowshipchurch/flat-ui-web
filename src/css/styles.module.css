@@ -80,6 +80,13 @@
   border: 0;
   object-fit: cover; }
 
+.mediaContentContainer {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
 /**
 * Styles for the Loaders
 */
@@ -128,10 +135,14 @@
     margin: 10px 25%;
     height: 30px; }
 
+.ringContainer {
+  height: 100%;
+  composes: contentContainer; }
+
 .ringLoader {
   display: inline-block;
-  width: 64px;
-  height: 64px; }
+  width: 56px;
+  height: 56px; }
   .ringLoader:after {
     content: " ";
     display: block;

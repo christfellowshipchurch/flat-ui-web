@@ -4,7 +4,9 @@ exports[`MediaItem renders a video with a background image 1`] = `
 <div
   className=""
 >
-  <div />
+  <div>
+    <div />
+  </div>
   <video
     autoPlay={true}
     loop={true}
@@ -23,6 +25,8 @@ exports[`MediaItem renders an image with no video 1`] = `
 <div
   className=""
 >
-  <div />
+  <div>
+    <div />
+  </div>
 </div>
 `;

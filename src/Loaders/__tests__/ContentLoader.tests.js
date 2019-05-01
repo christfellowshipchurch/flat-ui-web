@@ -1,5 +1,5 @@
 import React from 'react'
-import ContentLoader from '../GeneralContentLoader'
+import ContentLoader from '../ContentLoader'
 import renderer from 'react-test-renderer'
 
 describe('ContentLoader', () => {

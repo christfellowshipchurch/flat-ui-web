@@ -1,5 +1,5 @@
 import React from 'react'
-import RingLoader from '../StandardLoader'
+import RingLoader from '../RingLoader'
 import renderer from 'react-test-renderer'
 
 describe('RingLoader', () => {
