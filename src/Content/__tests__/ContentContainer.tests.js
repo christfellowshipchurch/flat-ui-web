@@ -1,19 +1,17 @@
 import React from 'react'
-import ContentContainer from '../ContentContainer'
-import ContentTitle from '../ContentTitle'
-import ContentBody from '../ContentBody'
+import Content from '../../Content'
 import renderer from 'react-test-renderer'
 
 describe('ContentContainer', () => {
     it('renders content in default layout without media', () => {
         const tree = renderer.create(
-            <ContentContainer
+            <Content
                 ratio="21by9"
                 layout="default"
             >
-                <ContentTitle>Title</ContentTitle>
-                <ContentBody>Content body.</ContentBody>
-            </ContentContainer>
+                <Content.Title>Title</Content.Title>
+                <Content.Body>Content body.</Content.Body>
+            </Content>
         )
 
         expect(tree).toMatchSnapshot();
@@ -21,15 +19,15 @@ describe('ContentContainer', () => {
 
     it('renders an image and content in default layout', () => {
         const tree = renderer.create(
-            <ContentContainer
+            <Content
                 imageUrl="https://image.url.com"
                 imageAlt="Image Alt"
                 ratio="21by9"
                 layout="default"
             >
-                <ContentTitle>Title</ContentTitle>
-                <ContentBody>Content body.</ContentBody>
-            </ContentContainer>
+                <Content.Title>Title</Content.Title>
+                <Content.Body>Content body.</Content.Body>
+            </Content>
         )
 
         expect(tree).toMatchSnapshot();
@@ -37,16 +35,16 @@ describe('ContentContainer', () => {
 
     it('renders a video with background image and content in default layout', () => {
         const tree = renderer.create(
-            <ContentContainer
+            <Content
                 videoUrl="https://video.url.com"
                 imageUrl="https://image.url.com"
                 imageAlt="Image Alt"
                 ratio="21by9"
                 layout="default"
             >
-                <ContentTitle>Title</ContentTitle>
-                <ContentBody>Content body.</ContentBody>
-            </ContentContainer>
+                <Content.Title>Title</Content.Title>
+                <Content.Body>Content body.</Content.Body>
+            </Content>
         )
 
         expect(tree).toMatchSnapshot();

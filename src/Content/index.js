@@ -2,4 +2,8 @@ import Wrapper from './ContentContainer'
 import Title from './ContentTitle'
 import Body from './ContentBody'
 
-export { Wrapper, Title, Body }
+const Content = Wrapper
+Content.Title = Title
+Content.Body = Body
+
+export default Content

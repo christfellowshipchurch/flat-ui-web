@@ -6,7 +6,7 @@ import {
   contentContainer, contentMedia, contentRight, contentLeft, contentTop, contentBottom
 } from '../css/styles.module.css'
 
-import * as Media from '../Media'
+import Media from '../Media'
 
 const ContentContainer = ({
   layout, imageUrl, imageAlt, videoUrl, ratio, children, className
@@ -23,7 +23,7 @@ const ContentContainer = ({
       {imageUrl || videoUrl
         ? (
           <div className={contentMedia}>
-            <Media.Item ratio={ratio} imageUrl={imageUrl} imageAlt={imageAlt} videoUrl={videoUrl} />
+            <Media ratio={ratio} imageUrl={imageUrl} imageAlt={imageAlt} videoUrl={videoUrl} />
           </div>
         )
         : null}
