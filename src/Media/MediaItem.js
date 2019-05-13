@@ -5,52 +5,50 @@ import classNames from 'classnames';
 import Image from './Image';
 import Video from './Video';
 
-// TODO : Add frost as a prop that gets passed in with the frost type [light, dark] being the value
-const GeneralContentMediaItem = ({
-  ratio, imageUrl, imageAlt, videoUrl, className, loading
-}) => {
-  const ratioClass = `embed-responsive-${ratio}`;
-  const containerClasses = classNames(
-    'general-content-media',
-    'embed-responsive',
-    ratioClass,
-    className
-  );
-  const mediaObjClass = classNames(
-    'embed-responsive-item',
-  );
+import {
+  mediaContainer1by1, mediaContainer4by3, mediaContainer16by9, mediaContainer21by9,
+  mediaContentContainer
+} from '../css/styles.module.css'
 
-  const img = imageUrl
-    ? <Image source={imageUrl} alt={imageAlt} className={mediaObjClass} />
-    : null
-  const video = videoUrl
-    ? <Video source={videoUrl} className={mediaObjClass} />
-    : null
+const MediaItem = ({
+  ratio, imageUrl, imageAlt, videoUrl, className, children
+}) => {
+  const ratioClasses = {
+    '1by1': mediaContainer1by1,
+    '4by3': mediaContainer4by3,
+    '16by9': mediaContainer16by9,
+    '21by9': mediaContainer21by9,
+  }
+
   return (
-    <div className={containerClasses}>
-      {loading ? <div class="loading-img"></div> : <React.Fragment>{img}{video}</React.Fragment>}
+    <div className={classNames(ratioClasses[ratio], className)}>
+      <Image source={imageUrl} alt={imageAlt} />
+      {videoUrl
+        ? <Video source={videoUrl} />
+        : null}
+
+      {children
+        ? <div className={mediaContentContainer}>{children}</div>
+        : null}
     </div>
   );
 };
 
 const defaultProps = {
   ratio: '1by1',
-  imageUrl: 'https://via.placeholder.com/1024',
-  imageAlt: 'Christ Fellowship Church',
   videoUrl: null,
   className: ''
 }
 
 const propTypes = {
   ratio: PropTypes.string,
-  imageUrl: PropTypes.string,
-  imageAlt: PropTypes.string,
+  imageUrl: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired,
   videoUrl: PropTypes.string,
   className: PropTypes.string,
-  loading: PropTypes.bool.isRequired,
 }
 
-GeneralContentMediaItem.defaultProps = defaultProps;
-GeneralContentMediaItem.propTypes = propTypes;
+MediaItem.defaultProps = defaultProps;
+MediaItem.propTypes = propTypes;
 
-export default GeneralContentMediaItem;
+export default MediaItem;

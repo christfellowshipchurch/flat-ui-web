@@ -1,31 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames'
 
 import Img from 'react-image';
-import * as Loaders from '../Loaders';
+import Loaders from '../Loader';
 
-const GeneralContentMediaImage = ({ className, source, alt }) => (
+import { mediaItem } from '../css/styles.module.css'
+
+const MediaImage = ({ className, source, alt }) => (
   <Img
     src={source}
     alt={alt}
-    className={className}
-    loader={<Loaders.Standard />}
+    className={classNames(mediaItem, className)}
+    loader={<Loaders />}
   />
 );
 
 const defaultProps = {
-  className: '',
-  source: 'https://via.placeholder.com/1024',
-  alt: 'Christ Fellowship Church',
+  className: ''
 };
 
 const propTypes = {
   className: PropTypes.string,
-  source: PropTypes.string,
-  alt: PropTypes.string,
+  source: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
-GeneralContentMediaImage.propTypes = propTypes;
-GeneralContentMediaImage.defaultProps = defaultProps;
+MediaImage.propTypes = propTypes;
+MediaImage.defaultProps = defaultProps;
 
-export default GeneralContentMediaImage;
+export default MediaImage;

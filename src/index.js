@@ -1,7 +1,6 @@
-import * as Accordion from './Accordion'
-import * as CallsToAction from './CallsToAction'
-import * as GeneralContent from './GeneralContent'
-import * as Loaders from './Loaders'
-import * as Media from './Media'
+import Accordion from './Accordion'
+import Content from './Content'
+import Loader from './Loader'
+import Media from './Media'
 
-export { Accordion, CallsToAction, GeneralContent, Loaders, Media }
+export { Accordion, Content, Loader, Media }
