@@ -1,8 +1,8 @@
 # Accordion
 
-![alt christ-fellowship-flat-ui](/docs/static/Accordion/Accordion.png)
+![alt christ-fellowship-flat-ui](/docs/static/Accordion.png)
 ## About
-The accordion is set up with items in 2 columns with a Title and Content. The Content accepts HTML so you can insert whatever you would like inside of it. Each item has an icon on the right-hand side which is a "+" when the item is closed and a "-" when the item is opened. There are 4 different configurations for the accordion:
+The accordion is set up with items in 2 columns, each item described with a Title and Content. The Content accepts Html, so you can insert whatever you would like inside of it. Each item has an icon on the right-hand side which is a **"+"** when the item is closed and a **"-"** when the item is opened. There are 4 different configurations for an accordion:
 
 * **Single:** Only 1 item can be opened at a time. Clicking on an open item will close it, and clicking on a closed item will close the opened item, then open itself.
 
@@ -13,13 +13,9 @@ The accordion is set up with items in 2 columns with a Title and Content. The Co
 * **Persistent:** You are able to open as many items in the accordion as you would like. Once an item is opened, it cannot be closed.
 
 ## Usage
-The Accordion is broken into 2 componets: `Accordion` (the parent container that manages state) and `AccordionItem` (the physical items that are displayed).
-* Accordion: the parent container that manages state
-* AccordionItem: the physical items that are displayed
-
 The Accordion will automatically wrap each child passed in the `AccordionItem` as it renders, so all you need to do is drop in the Html you want to be rendered in each item. Just add the `title` attribute to each container.
 ```jsx
-<Accordion.Wrapper>
+<Accordion>
     <div title="Item 1">
         <h2>This is one item that I want displayed</h2>
     </div>
@@ -27,7 +23,7 @@ The Accordion will automatically wrap each child passed in the `AccordionItem` a
     <h2 title="Item 2">Since the Accordion parses each child, there is no need to adhere to a specific structure for the children</h2>
 
     <ReactComponent title="Item 3">You can even pass in a React Component</ReactComponent>
-</Accordion.Wrapper>
+</Accordion>
 ```
 
 
