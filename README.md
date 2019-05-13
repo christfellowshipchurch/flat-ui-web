@@ -26,7 +26,7 @@ Please make sure to update tests as appropriate. Commits without tests are not l
 Running `yarn test -u` will update snapshots. **Only do this if you are positive that snapshots need to be updated**.
 
 ## Authors and acknowledgment
-[Caleb Panza](https://github.com/calebpanza)
+[Caleb Panza](https://github.com/calebpanza), Cristian Garcia
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
