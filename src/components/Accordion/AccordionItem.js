@@ -26,7 +26,7 @@ const AccordionItem = ({ id, title, isOpen, onClick, children }) => {
           {children}
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

@@ -1,15 +1,16 @@
 {
   "name": "@christfellowshipchurch/flat-ui-web",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Flat UI package for Christ Fellowship web projects",
   "main": "lib/index.js",
   "scripts": {
+    "start": "yarn build-css && react-scripts start",
     "test": "yarn build-css && jest",
-    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib --copy-files && yarn minify-css",
+    "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src/components -d ./lib --copy-files && yarn minify-css",
     "lint": "eslint ./src --ext .js",
     "babel-version": "babel --version",
-    "build-css": "node-sass --include-path scss ./src/scss/styles.module.scss ./src/css/styles.module.css",
-    "minify-css": "node-sass --include-path scss ./src/scss/styles.module.scss ./lib/css/styles.module.css --output-style compressed"
+    "build-css": "node-sass --include-path scss ./src/components/scss/styles.module.scss ./src/components/css/styles.module.css",
+    "minify-css": "node-sass --include-path scss ./src/components/scss/styles.module.scss ./lib/css/styles.module.css --output-style compressed"
   },
   "files": [
     "lib"
@@ -78,5 +79,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "eb803583da83beeab7756baddcae3adca7650c39"
+  "gitHead": "eb803583da83beeab7756baddcae3adca7650c39",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

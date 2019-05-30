@@ -3,8 +3,8 @@ import { Parser } from 'html-to-react';
 
 const htmlToReactParser = new Parser();
 
-const ContentBody = ({ children }) =>
-  <div className="my-3">
+const ContentBody = ({ className, children }) =>
+  <div className={className}>
     {htmlToReactParser.parse(children)}
   </div>
 
