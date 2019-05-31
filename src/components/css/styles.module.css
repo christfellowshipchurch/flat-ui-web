@@ -87,6 +87,9 @@
   left: 50%;
   transform: translate(-50%, -50%); }
 
+.round {
+  border-radius: 50%; }
+
 /**
 * Styles for the Loaders
 */
