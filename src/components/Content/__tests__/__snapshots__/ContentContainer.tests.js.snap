@@ -1,5 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ContentContainer renders a larger title and subtitle 1`] = `
+<div
+  className=""
+>
+  <div>
+    <div
+      className=""
+    >
+      <div>
+        <div />
+      </div>
+      <video
+        autoPlay={true}
+        loop={true}
+        muted={true}
+        playsInline={true}
+      >
+        <source
+          src="https://video.url.com"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+  </div>
+  <div>
+    <h1>
+      Title
+    </h1>
+    <h5>
+      Subtitle
+    </h5>
+    <div>
+      Content body.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ContentContainer renders a subtitle in the content in the default size 1`] = `
+<div
+  className=""
+>
+  <div>
+    <div
+      className=""
+    >
+      <div>
+        <div />
+      </div>
+      <video
+        autoPlay={true}
+        loop={true}
+        muted={true}
+        playsInline={true}
+      >
+        <source
+          src="https://video.url.com"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+  </div>
+  <div>
+    <h2>
+      Title
+    </h2>
+    <h6>
+      Subtitle
+    </h6>
+    <div>
+      Content body.
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ContentContainer renders a video with background image and content in default layout 1`] = `
 <div
   className=""
@@ -28,9 +104,7 @@ exports[`ContentContainer renders a video with background image and content in d
     <h2>
       Title
     </h2>
-    <div
-      className="my-3"
-    >
+    <div>
       Content body.
     </div>
   </div>
@@ -54,9 +128,7 @@ exports[`ContentContainer renders an image and content in default layout 1`] = `
     <h2>
       Title
     </h2>
-    <div
-      className="my-3"
-    >
+    <div>
       Content body.
     </div>
   </div>
@@ -71,9 +143,7 @@ exports[`ContentContainer renders content in default layout without media 1`] = 
     <h2>
       Title
     </h2>
-    <div
-      className="my-3"
-    >
+    <div>
       Content body.
     </div>
   </div>
