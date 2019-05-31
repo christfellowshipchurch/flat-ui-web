@@ -17,7 +17,11 @@ const App = () => {
         imageAlt="Image Alt"
         ratio="16by9"
       >
-        <Content.Title larger className="test-class">
+        <Content.Subtitle>
+          This is my Subtitle
+        </Content.Subtitle>
+
+        <Content.Title>
           Item Title
         </Content.Title>
 
