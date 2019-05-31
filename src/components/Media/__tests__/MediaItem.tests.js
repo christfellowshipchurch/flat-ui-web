@@ -28,4 +28,12 @@ describe('MediaItem', () => {
 
         expect(tree).toMatchSnapshot()
     })
+
+    it('renders a rounded media item', () => {
+        const tree = renderer.create(
+            <MediaItem imageUrl="https://img.url.com" imageAlt="Image Alt" rounded />
+        )
+
+        expect(tree).toMatchSnapshot()
+    })
 })
