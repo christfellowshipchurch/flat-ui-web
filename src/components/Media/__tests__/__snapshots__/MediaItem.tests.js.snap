@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MediaItem renders a rounded media item 1`] = `
+<div
+  className=""
+>
+  <div>
+    <div />
+  </div>
+</div>
+`;
+
 exports[`MediaItem renders a video with a background image 1`] = `
 <div
   className=""
