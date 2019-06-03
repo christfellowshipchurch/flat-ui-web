@@ -7,9 +7,7 @@
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
-  flex-wrap: wrap;
-  margin-right: -0.5rem;
-  margin-left: -0.5rem; }
+  flex-wrap: wrap; }
 
 .flexCenter {
   justify-content: center;
@@ -19,6 +17,7 @@
   align-items: center; }
 
 .contentContainer {
+  width: 100%;
   composes: row;
   composes: flexCenter;
   composes: flexMiddle; }
