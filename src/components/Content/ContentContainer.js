@@ -9,7 +9,7 @@ import {
 import Media from '../Media'
 
 const ContentContainer = ({
-  layout, imageUrl, imageAlt, videoUrl, ratio, children, className
+  layout, imageUrl, imageAlt, videoUrl, ratio, children, className, rounded = false
 }) => {
   const layouts = {
     default: contentBottom,
@@ -23,7 +23,7 @@ const ContentContainer = ({
       {imageUrl || videoUrl
         ? (
           <div className={contentMedia}>
-            <Media ratio={ratio} imageUrl={imageUrl} imageAlt={imageAlt} videoUrl={videoUrl} />
+            <Media ratio={ratio} imageUrl={imageUrl} imageAlt={imageAlt} videoUrl={videoUrl} rounded={rounded} />
           </div>
         )
         : null}
