@@ -8,33 +8,34 @@ const imgUrl = "https://i-h1.pinimg.com/564x/bc/f8/e4/bcf8e4a9e37b32e9cdfdc775d6
 const imgAlt = 'some image alt'
 
 const App = () => {
+  const mediaProps = {
+    imageAlt: imgAlt,
+    imageUrl: imgUrl,
+    ratio: '1by1',
+    className: "smaller-img margin-auto"
+  }
+
   return (
     <div className="App">
 
-      <Carousel>
-        <Content
-          imageAlt={imgAlt}
-          imageUrl={imgUrl}
-          ratio="1by1"
-          rounded >
-          <Content.Title>Title</Content.Title>
-          <Content.Body>body</Content.Body>
-        </Content>
-        <Content
-          imageAlt={imgAlt}
-          imageUrl={imgUrl}
-          ratio="1by1" >
-          <Content.Title>Title</Content.Title>
-          <Content.Body>body</Content.Body>
-        </Content>
-        <Content
-          imageAlt={imgAlt}
-          imageUrl={imgUrl}
-          ratio="1by1" >
-          <Content.Title>Title</Content.Title>
-          <Content.Body>body</Content.Body>
-        </Content>
-      </Carousel>
+      <Media className="smaller-img" imageAlt={imgAlt} imageUrl={imgUrl} />
+
+      <hr></hr>
+
+      <Content media={mediaProps}>
+        <Content.Title>Passing in media as an object</Content.Title>
+        <Content.Body>body</Content.Body>
+      </Content>
+
+      <hr></hr>
+
+      <Content
+        imageAlt={imgAlt}
+        imageUrl={imgUrl}
+        ratio="1by1" >
+        <Content.Title>Passing in individual media props</Content.Title>
+        <Content.Body>body</Content.Body>
+      </Content>
 
     </div >
   );

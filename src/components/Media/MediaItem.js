@@ -37,7 +37,7 @@ const MediaItem = ({
         ? <div className={mediaContentContainer}>{children}</div>
         : null}
     </div>
-  );
+  )
 };
 
 const defaultProps = {

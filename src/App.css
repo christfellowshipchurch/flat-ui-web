@@ -2,10 +2,16 @@ body {
   background: black;
 }
 
+.smaller-img {
+  width: 100px !important;
+}
+
+.margin-auto { margin: auto }
+
 .App {
   background: white;
   text-align: center;
-  max-width: 1200px;
+  max-width: 500px;
   margin: auto;
   padding-top: 5%;
 }
