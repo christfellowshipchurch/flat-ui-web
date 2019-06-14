@@ -9,7 +9,7 @@ import {
 import Media from '../Media'
 
 const ContentContainer = ({
-  layout, imageUrl, imageAlt, videoUrl, ratio, children, className
+  layout, imageUrl, imageAlt, videoUrl, ratio, children, className, rounded, media
 }) => {
   const layouts = {
     default: contentBottom,
@@ -18,15 +18,23 @@ const ContentContainer = ({
     right: contentRight,
   };
 
+  const mediaItem = media
+    ? (
+      <div className={contentMedia}>
+        <Media {...media} />
+      </div>
+    )
+    : imageUrl || videoUrl
+      ? (
+        <div className={contentMedia}>
+          <Media ratio={ratio} imageUrl={imageUrl} imageAlt={imageAlt} videoUrl={videoUrl} rounded={rounded} />
+        </div>
+      )
+      : null
+
   return (
     <div className={classNames(contentContainer, className)}>
-      {imageUrl || videoUrl
-        ? (
-          <div className={contentMedia}>
-            <Media ratio={ratio} imageUrl={imageUrl} imageAlt={imageAlt} videoUrl={videoUrl} />
-          </div>
-        )
-        : null}
+      {mediaItem}
       <div className={layouts[layout]}>
         {children}
       </div>
@@ -40,7 +48,9 @@ const defaultProps = {
   imageAlt: null,
   videoUrl: null,
   ratio: '16by9',
-  className: ''
+  className: '',
+  rounded: false,
+  media: null
 };
 
 const propTypes = {
@@ -49,7 +59,9 @@ const propTypes = {
   imageAlt: PropTypes.string,
   videoUrl: PropTypes.string,
   ratio: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
+  rounded: PropTypes.bool,
+  media: PropTypes.object
 };
 
 ContentContainer.defaultProps = defaultProps;
