@@ -357,13 +357,28 @@
     height: 4px;
     margin-top: 2px; }
 
-.dotUnselected button {
-  padding: 6px;
-  border-radius: 50%;
-  background: lightgray;
-  box-shadow: none;
-  border-width: 0;
-  margin-right: 2px;
-  margin-left: 2px; }
-  .dotUnselected button:disabled {
-    background: gray; }
+.dot {
+  padding: 0; }
+  .dot li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+    padding: 0;
+    cursor: pointer; }
+    .dot li.slick-active button {
+      background: gray; }
+  .dot button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    border-radius: 50%;
+    outline: none;
+    background: lightgrey; }

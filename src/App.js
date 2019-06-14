@@ -17,27 +17,25 @@ const App = () => {
 
   return (
     <div className="App">
+      <Carousel>
+        <Media className="smaller-img" imageAlt={imgAlt} imageUrl={imgUrl} />
 
-      <Media className="smaller-img" imageAlt={imgAlt} imageUrl={imgUrl} />
+        <Content media={mediaProps}>
+          <Content.Title>Passing in media as an object</Content.Title>
+          <Content.Body>body</Content.Body>
+        </Content>
 
-      <hr></hr>
 
-      <Content media={mediaProps}>
-        <Content.Title>Passing in media as an object</Content.Title>
-        <Content.Body>body</Content.Body>
-      </Content>
+        <Content
+          imageAlt={imgAlt}
+          imageUrl={imgUrl}
+          ratio="1by1" >
+          <Content.Title>Passing in individual media props</Content.Title>
+          <Content.Body>body</Content.Body>
+        </Content>
+      </Carousel>
 
-      <hr></hr>
-
-      <Content
-        imageAlt={imgAlt}
-        imageUrl={imgUrl}
-        ratio="1by1" >
-        <Content.Title>Passing in individual media props</Content.Title>
-        <Content.Body>body</Content.Body>
-      </Content>
-
-    </div >
+    </div>
   );
 }
 

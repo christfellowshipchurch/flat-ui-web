@@ -1,29 +1,31 @@
 import React from 'react'
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+import classnames from 'classnames'
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css'
+import "slick-carousel/slick/slick-theme.css"
+
 import {
-    dotUnselected
+    dot
 } from '../css/styles.module.css'
 
 const Carousel = ({ children, className }) => {
 
-    const childrenCount = children.length || 1
+    const props = {
+        dots: true,
+        arrows: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dotsClass: dot
+    };
 
     return (
-        <CarouselProvider
-            naturalSlideWidth={100}
-            naturalSlideHeight={125}
-            className={className}
-            totalSlides={childrenCount}
-        >
-            <Slider>
-                {childrenCount > 1
-                    ? children.map((n, i) => <Slide index={i}>{n}</Slide>)
-                    : <Slide index={0}>{children}</Slide>}
-            </Slider>
-
-            <DotGroup className={dotUnselected} />
-        </CarouselProvider>
+        <Slider {...props} {...className}>
+            {children}
+        </Slider>
     )
 }
 
